@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class HomeScreenController extends StatelessWidget {
-  const HomeScreenController({Key? key}) : super(key: key);
+class HomeScreenController extends GetxController {
 
-  @override
-  Widget build(BuildContext context) {
-    return Container();
-  }
+  
 }
