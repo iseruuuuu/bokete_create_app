@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 // Project imports:
 import 'package:bokete_create_app/screen/home/home_screen_controller.dart';
+import 'package:image_editor/image_editor.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
@@ -25,7 +26,11 @@ class HomeScreen extends StatelessWidget {
             child: SizedBox(
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.width / 1.3,
-              child: controller.images,
+              //child: controller.images,
+              //child: Image.asset(controller.imagess),
+              child: controller.target == null
+                  ? Image.asset(controller.imagess)
+                  : Image(image: controller.target!),
             ),
           ),
           Obx(() => Text(controller.title.value)),
@@ -48,13 +53,13 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           TextButton(
-            onPressed: () => controller.onSetWord(),
+            onPressed: () => controller.onChangeImages(),
             child: const Text('文字を反映する'),
           ),
           TextButton(
             onPressed: () => controller.onImageStore(),
             child: const Text('画像を保存する'),
-          )
+          ),
         ],
       ),
     );
