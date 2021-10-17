@@ -30,10 +30,8 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
       ),
       body: Column(
         children: <Widget>[
-          AspectRatio(
-            aspectRatio: 1,
-            child: target != null ? Image(image: target!) : Image.asset(assets),
-          ),
+          target != null ? Image(image: target!) : Image.asset(assets),
+          const Spacer(),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 40),
             child: SizedBox(
@@ -51,18 +49,21 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
               ),
             ),
           ),
-          TextButton(
+          const Spacer(),
+          ElevatedButton(
             onPressed: () async {
               await addText(fontName);
             },
             child: const Text('文字を反映する'),
           ),
+          const Spacer(),
           TextButton(
             onPressed: () {
               onImageStore();
             },
             child: const Text('画像を保存する'),
           ),
+          const Spacer(),
         ],
       ),
     );
