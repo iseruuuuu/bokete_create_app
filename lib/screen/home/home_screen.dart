@@ -1,9 +1,16 @@
+// Dart imports:
 import 'dart:typed_data';
-import 'package:bokete_create_app/gen/assets.gen.dart';
-import 'package:bokete_create_app/screen/home/home_screen_controller.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
+
+// Package imports:
 import 'package:get/get.dart';
 import 'package:image_editor/image_editor.dart';
+
+// Project imports:
+import 'package:bokete_create_app/gen/assets.gen.dart';
+import 'package:bokete_create_app/screen/home/home_screen_controller.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);

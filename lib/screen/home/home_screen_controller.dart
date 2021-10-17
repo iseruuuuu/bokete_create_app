@@ -1,11 +1,18 @@
+// Dart imports:
 import 'dart:io';
 import 'dart:typed_data';
-import 'package:bokete_create_app/gen/assets.gen.dart';
+
+// Flutter imports:
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:image_editor/image_editor.dart';
+
+// Package imports:
 import 'package:get/get.dart';
+import 'package:image_editor/image_editor.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
+
+// Project imports:
+import 'package:bokete_create_app/gen/assets.gen.dart';
 
 class HomeScreenController extends GetxController {
   final textOption = AddTextOption();
