@@ -22,7 +22,7 @@ class HomeScreen extends StatelessWidget {
               onTapDown: (d) {
                 //TODO 後で登録
               },
-              child: Container(
+              child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width,
                 child: Assets.images.background.image(),
