@@ -29,12 +29,24 @@ class HomeScreen extends StatelessWidget {
               ),
             ),
           ),
-
+          TextField(
+            maxLength: 10,
+            maxLines: 1,
+            onChanged: (text) {
+              //後で登録
+            },
+          ),
           TextButton(
-              onPressed: () {
-                //TODO 後で登録
-              },
-              child: Text('画像を保存する'),
+            onPressed: () {
+              //TODO 後で追加
+            },
+            child: const Text('文字を反映する'),
+          ),
+          TextButton(
+            onPressed: () {
+              //TODO 後で登録
+            },
+            child: const Text('画像を保存する'),
           )
         ],
       ),
