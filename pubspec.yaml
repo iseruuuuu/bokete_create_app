@@ -21,6 +21,7 @@ dependencies:
 
   # edit image
   image_editor: ^1.0.1
+  image_editor_pro: ^1.1.8
 
 flutter_gen:
   integrations:

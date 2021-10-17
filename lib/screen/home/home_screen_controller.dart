@@ -8,6 +8,8 @@ import 'package:get/get.dart';
 
 class HomeScreenController extends GetxController {
   final textOption = AddTextOption();
+  final editOption = ImageEditorOption();
+  final textController = TextEditingController();
   final images = Assets.images.background.image();
 
   @override
@@ -15,11 +17,32 @@ class HomeScreenController extends GetxController {
     super.onInit();
   }
 
+  Future<Uint8List?> onEditImage() async {
+    final ByteData bytes = await rootBundle.load(images.toString());
+    final Uint8List list = bytes.buffer.asUint8List();
+  }
+
+  /*
+  static Future<Uint8List?> editImage({
+    required Uint8List image,
+    required ImageEditorOption imageEditorOption,
+   */
+  //TODO image  -> Uint8List
+
+//   static Future<Uint8List?> onLoadImage {
+//
+//     return rootBundle.load(images).buffer.asUint8List();
+// }
+
+  void onChanged(String text) {
+    print(text);
+  }
+
   //文字の反映をする
   void onSetWord() {
     textOption.addText(
       EditorText(
-        text: 'うんち！',
+        text: '',
         offset: const Offset(0, 0),
         fontSizePx: 10,
         textColor: Colors.black,

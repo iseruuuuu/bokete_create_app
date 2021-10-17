@@ -15,33 +15,22 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.blue,
         elevation: 0,
       ),
       body: Column(
         children: [
           Center(
-            child: GestureDetector(
-              onTapDown: (d) {
-                //TODO 後で登録
-              },
-              child: SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: MediaQuery.of(context).size.width,
-                //child: Assets.images.background.image(),
-                child: controller.images,
-              ),
+            child: SizedBox(
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width,
+              child: controller.images,
             ),
           ),
-
-
-
           TextField(
             maxLength: 10,
             maxLines: 1,
-            onChanged: (text) {
-              //後で登録
-            },
+            onChanged: (text) => controller.onChanged(text),
           ),
           TextButton(
             onPressed: () => controller.onSetWord(),
