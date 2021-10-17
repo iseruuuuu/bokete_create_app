@@ -30,7 +30,12 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
 
-
+          TextButton(
+              onPressed: () {
+                //TODO 後で登録
+              },
+              child: Text('画像を保存する'),
+          )
         ],
       ),
     );
