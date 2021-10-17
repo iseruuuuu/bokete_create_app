@@ -28,7 +28,9 @@ class HomeScreen extends StatelessWidget {
                 child: Assets.images.background.image(),
               ),
             ),
-          )
+          ),
+
+
         ],
       ),
     );
