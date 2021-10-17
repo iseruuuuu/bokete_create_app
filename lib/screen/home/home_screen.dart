@@ -1,5 +1,4 @@
 import 'dart:typed_data';
-
 import 'package:bokete_create_app/gen/assets.gen.dart';
 import 'package:bokete_create_app/screen/home/home_screen_controller.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +7,6 @@ import 'package:image_editor/image_editor.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
-
   final controller = Get.put(HomeScreenController());
 
   @override
@@ -43,9 +41,7 @@ class HomeScreen extends StatelessWidget {
             child: const Text('文字を反映する'),
           ),
           TextButton(
-            onPressed: () {
-              //TODO 後で登録
-            },
+            onPressed: () => controller.onImageStore(),
             child: const Text('画像を保存する'),
           )
         ],

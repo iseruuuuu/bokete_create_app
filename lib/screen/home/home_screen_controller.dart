@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_editor/image_editor.dart';
 import 'package:get/get.dart';
+import 'package:image_gallery_saver/image_gallery_saver.dart';
 
 class HomeScreenController extends GetxController {
   final textOption = AddTextOption();
@@ -53,7 +54,9 @@ class HomeScreenController extends GetxController {
   }
 
   //画像の保存
-  void onImageStore() {
-
+  // void onImageStore(File image) async {
+  void onImageStore() async {
+    // Uint8List _buffer = await image.readAsBytes();
+    // final result = await ImageGallerySaver.saveImage(_buffer);
   }
 }
