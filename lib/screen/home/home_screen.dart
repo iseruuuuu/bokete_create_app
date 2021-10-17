@@ -29,14 +29,17 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Obx(() => Text(controller.title.value)),
-          TextField(
-            maxLines: 1,
-            maxLength: 20,
-            textAlign: TextAlign.center,
-            controller: controller.textController,
-            onChanged: (text) => controller.onChanged(text),
-            decoration: const InputDecoration(
-              border: OutlineInputBorder(),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 40),
+            child: TextField(
+              maxLines: 1,
+              maxLength: 20,
+              textAlign: TextAlign.center,
+              controller: controller.textController,
+              onChanged: (text) => controller.onChanged(text),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+              ),
             ),
           ),
           TextButton(
