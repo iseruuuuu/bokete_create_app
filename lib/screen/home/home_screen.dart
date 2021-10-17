@@ -19,18 +19,24 @@ class HomeScreen extends StatelessWidget {
         elevation: 0,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Center(
             child: SizedBox(
               width: MediaQuery.of(context).size.width,
-              height: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.width / 1.3,
               child: controller.images,
             ),
           ),
+          Obx(() => Text(controller.title.value)),
           TextField(
-            maxLength: 10,
             maxLines: 1,
+            maxLength: 20,
+            textAlign: TextAlign.center,
             onChanged: (text) => controller.onChanged(text),
+            decoration: const InputDecoration(
+              border: OutlineInputBorder(),
+            ),
           ),
           TextButton(
             onPressed: () => controller.onSetWord(),

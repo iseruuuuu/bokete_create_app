@@ -11,6 +11,7 @@ class HomeScreenController extends GetxController {
   final editOption = ImageEditorOption();
   final textController = TextEditingController();
   final images = Assets.images.background.image();
+  var title = ''.obs;
 
   @override
   void onInit() {
@@ -35,14 +36,14 @@ class HomeScreenController extends GetxController {
 // }
 
   void onChanged(String text) {
-    print(text);
+    title.value = text;
   }
 
   //文字の反映をする
   void onSetWord() {
     textOption.addText(
       EditorText(
-        text: '',
+        text: title.value,
         offset: const Offset(0, 0),
         fontSizePx: 10,
         textColor: Colors.black,
@@ -52,5 +53,7 @@ class HomeScreenController extends GetxController {
   }
 
   //画像の保存
-  void onImageStore() {}
+  void onImageStore() {
+
+  }
 }
