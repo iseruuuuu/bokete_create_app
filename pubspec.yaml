@@ -2,6 +2,7 @@ name: bokete_create_app
 description: A new Flutter project.
 
 publish_to: 'none'
+
 version: 1.0.0+1
 
 environment:
@@ -11,11 +12,30 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
+
+  # architecture
   get: ^4.3.8
+  flutter_svg: ^0.23.0+1
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+    flare_flutter: true
+
+  # edit image
+  image_editor: ^1.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
   flutter_lints: ^1.0.0
+
+  build_runner: ^2.1.4
+
+  flutter_gen_runner:
+
 flutter:
   uses-material-design: true
+  assets:
+    - assets/images/
