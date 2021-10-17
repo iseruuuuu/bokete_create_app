@@ -26,6 +26,14 @@ class HomeScreenController extends GetxController {
     super.onInit();
   }
 
+  //メモ
+  /*
+  TODO やること
+  ・画像にテキストを貼れるようにしたい。
+  ・保存するときは、Uint8Listで保存する
+   */
+
+
   Future<Uint8List?> onEditImage() async {
     final ByteData bytes = await rootBundle.load(images.toString());
     final Uint8List list = bytes.buffer.asUint8List();
