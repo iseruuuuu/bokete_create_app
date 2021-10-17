@@ -1,7 +1,6 @@
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:dio/dio.dart';
 import 'package:image_editor/image_editor.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
@@ -17,6 +16,14 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   ImageProvider? target;
   String fontName = '';
   String assets = 'assets/images/odai.png';
+
+  //TODO やること
+
+  /*
+  ・画像の保存
+
+  ・文字数によってOffsetを変えてあげる。
+   */
 
   @override
   Widget build(BuildContext context) {
