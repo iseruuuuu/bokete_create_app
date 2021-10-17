@@ -22,8 +22,11 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        elevation: 0,
+        backgroundColor: Colors.white,
+        title: const Text(
+          '大喜利 メーカー',
+          style: TextStyle(color: Colors.lightBlue),
+        ),
       ),
       body: Column(
         children: <Widget>[
