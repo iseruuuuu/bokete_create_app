@@ -1,12 +1,16 @@
+import 'dart:typed_data';
+
 import 'package:bokete_create_app/gen/assets.gen.dart';
 import 'package:bokete_create_app/screen/home/home_screen_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:image_editor/image_editor.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({Key? key}) : super(key: key);
 
   final controller = Get.put(HomeScreenController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,10 +28,14 @@ class HomeScreen extends StatelessWidget {
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.width,
-                child: Assets.images.background.image(),
+                //child: Assets.images.background.image(),
+                child: controller.images,
               ),
             ),
           ),
+
+
+
           TextField(
             maxLength: 10,
             maxLines: 1,
@@ -36,9 +44,7 @@ class HomeScreen extends StatelessWidget {
             },
           ),
           TextButton(
-            onPressed: () {
-              //TODO 後で追加
-            },
+            onPressed: () => controller.onSetWord(),
             child: const Text('文字を反映する'),
           ),
           TextButton(
