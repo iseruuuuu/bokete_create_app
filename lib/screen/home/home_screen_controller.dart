@@ -59,4 +59,10 @@ class HomeScreenController extends GetxController {
     final ByteData byteData = await rootBundle.load(key);
     return byteData.buffer.asUint8List();
   }
+
+  //文字の反映をする
+  void onSetWord() {}
+
+  //画像の保存
+  void onImageStore() {}
 }
