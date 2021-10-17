@@ -20,6 +20,7 @@ class HomeScreenController extends GetxController {
   final textController = TextEditingController();
   final images = Assets.images.background.image();
   var title = ''.obs;
+  var maxLine = 3;
 
   @override
   void onInit() {
