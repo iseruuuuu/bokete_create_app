@@ -33,6 +33,7 @@ class HomeScreen extends StatelessWidget {
             maxLines: 1,
             maxLength: 20,
             textAlign: TextAlign.center,
+            controller: controller.textController,
             onChanged: (text) => controller.onChanged(text),
             decoration: const InputDecoration(
               border: OutlineInputBorder(),
