@@ -18,13 +18,31 @@ class HomeScreenController extends GetxController {
   final textOption = AddTextOption();
   final editOption = ImageEditorOption();
   final textController = TextEditingController();
+
+  //final target = ImageProvider;
+  ImageProvider? target;
   final images = Assets.images.background.image();
+  var imagess = 'assets/images/background.png';
   var title = ''.obs;
   var maxLine = 3;
+
+  //ImageProvider? target;
 
   @override
   void onInit() {
     super.onInit();
+  }
+
+  @override
+  void onReady() {
+    super.onReady();
+    onChangeImages();
+  }
+
+  @override
+  void onClose() {
+    super.onClose();
+    textController.dispose();
   }
 
   //メモ
@@ -32,25 +50,41 @@ class HomeScreenController extends GetxController {
   TODO やること
   ・画像にテキストを貼れるようにしたい。
   ・保存するときは、Uint8Listで保存する
+  ・TextFieldを3行までにしたい（今は、なぜかたくさんになる）
    */
 
+  void onChangeImages() async {
+    textOption.addText(
+      EditorText(
+        offset: const Offset(50, 50),
+        text: title.toString(),
+        fontSizePx: 20,
+        textColor: const Color(0xFF995555),
+        fontName: '',
+      ),
+    );
+    editOption.outputFormat = const OutputFormat.png();
+    editOption.addOption(textOption);
 
-  Future<Uint8List?> onEditImage() async {
-    final ByteData bytes = await rootBundle.load(images.toString());
-    final Uint8List list = bytes.buffer.asUint8List();
+    final Uint8List list = await getAssetImage();
+    final Uint8List? result = await ImageEditor.editImage(
+      image: list,
+      imageEditorOption: editOption,
+    );
+
+    if (result == null) {
+      return;
+    }
+    //print(target);//null
+    target = MemoryImage(result);
+    //print(target);//MemoryImage(_Uint8ArrayView#9718d, scale: 1.0)
+    // print(MemoryImage(result));
   }
 
-  /*
-  static Future<Uint8List?> editImage({
-    required Uint8List image,
-    required ImageEditorOption imageEditorOption,
-   */
-  //TODO image  -> Uint8List
-
-//   static Future<Uint8List?> onLoadImage {
-//
-//     return rootBundle.load(images).buffer.asUint8List();
-// }
+  Future<Uint8List> getAssetImage() async {
+    final ByteData byteData = await rootBundle.load(imagess);
+    return byteData.buffer.asUint8List();
+  }
 
   void onChanged(String text) {
     title.value = text;

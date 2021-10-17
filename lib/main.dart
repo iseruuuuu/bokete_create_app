@@ -1,4 +1,5 @@
 // Flutter imports:
+import 'package:bokete_create_app/screen/home_ful/home_ful_screen.dart';
 import 'package:flutter/material.dart';
 
 // Package imports:
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-      debugShowCheckedModeBanner: true,
-      home: HomeScreen(),
+    return const GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      //home: HomeScreen(),
+      home: HomeFulScreen(),
     );
   }
 }
