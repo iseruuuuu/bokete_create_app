@@ -5,9 +5,6 @@ import 'package:flutter/material.dart';
 // Package imports:
 import 'package:get/get.dart';
 
-// Project imports:
-import 'package:bokete_create_app/screen/home/home_screen.dart';
-
 void main() {
   runApp(const MyApp());
 }
