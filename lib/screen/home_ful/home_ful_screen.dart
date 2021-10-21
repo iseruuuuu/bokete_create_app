@@ -48,7 +48,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
         ),
       ),
       body: Column(
-        children: <Widget>[
+        children: [
           const SizedBox(height: 20),
           target != null ? Image(image: target!) : Image.asset(assets),
           Padding(
