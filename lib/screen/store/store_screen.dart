@@ -41,7 +41,7 @@ class StoreScreen extends StatelessWidget {
               ),
             ),
             GestureDetector(
-              onTap: controller.onTapShare,
+              onTap: controller.onTapTwiter,
               child: const Text(
                 'シェアをする',
                 style: TextStyle(
