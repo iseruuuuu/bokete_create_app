@@ -25,6 +25,9 @@ dependencies:
   # sort import
   import_sorter: ^4.6.0
 
+  #snackbar
+  top_snackbar_flutter: ^1.0.1
+
 flutter_gen:
   integrations:
     flutter_svg: true
