@@ -22,6 +22,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         title: const Text(
@@ -47,9 +48,8 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
         children: <Widget>[
           const SizedBox(height: 20),
           target != null ? Image(image: target!) : Image.asset(assets),
-          const Spacer(),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40),
+            padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
             child: SizedBox(
               width: 400,
               height: 100,
@@ -82,7 +82,6 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
           GestureDetector(
             onTap: () async {
               onImageStore();
-              //スナックバーを出す
               Navigator.push(
                 context,
                 MaterialPageRoute(
@@ -108,7 +107,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
     const int size = 60;
     final ImageEditorOption option = ImageEditorOption();
     final AddTextOption textOption = AddTextOption();
-    var position = Offset(0, 0);
+    var position = const Offset(0, 0);
     if (_controller.text.isEmpty) {
       position = const Offset(0, 0);
     } else if (_controller.text.length == 1) {
