@@ -69,6 +69,8 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             ),
           ),
           const Spacer(),
+
+          //TODO ボタンのデザインを変えたい。
           GestureDetector(
             onTap: () async {
               await addText(fontName);
@@ -82,6 +84,8 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             ),
           ),
           const Spacer(),
+
+          //TODO ボタンのデザインを変えたい。
           GestureDetector(
             onTap: () async {
               onImageStore();
