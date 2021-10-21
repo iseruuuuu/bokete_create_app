@@ -27,6 +27,7 @@ dependencies:
 
   #snackbar
   top_snackbar_flutter: ^1.0.1
+  url_launcher: ^6.0.12
 
 flutter_gen:
   integrations:
