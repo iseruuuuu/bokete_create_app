@@ -1,4 +1,5 @@
 import 'dart:typed_data';
+import 'package:bokete_create_app/screen/store/store_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_editor/image_editor.dart';
@@ -65,18 +66,37 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             ),
           ),
           const Spacer(),
-          ElevatedButton(
-            onPressed: () async {
+          GestureDetector(
+            onTap: () async {
               await addText(fontName);
             },
-            child: const Text('文字を反映する'),
+            child: const Text(
+              '文字を反映する',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue,
+              ),
+            ),
           ),
           const Spacer(),
-          TextButton(
-            onPressed: () {
+          GestureDetector(
+            onTap: () async {
               onImageStore();
+              //スナックバーを出す
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const StoreScreen(),
+                ),
+              );
             },
-            child: const Text('画像を保存する'),
+            child: const Text(
+              '画像を保存する',
+              style: TextStyle(
+                fontSize: 20,
+                color: Colors.blue,
+              ),
+            ),
           ),
           const Spacer(),
         ],
@@ -134,7 +154,6 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
     }
     target = MemoryImage(result);
     _uint8list = result;
-
     setState(() {});
   }
 
