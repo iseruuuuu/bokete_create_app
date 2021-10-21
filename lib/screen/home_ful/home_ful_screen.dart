@@ -111,6 +111,14 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   }
 
   Future addText(String fontName) async {
+
+    //TODO 文字の設定位置を考えたい。
+
+    //TODO 日本語は大丈夫そう。
+
+    //TODO 英語が絡んでくるとズレる。。。
+
+
     const int size = 60;
     final ImageEditorOption option = ImageEditorOption();
     final AddTextOption textOption = AddTextOption();
