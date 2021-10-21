@@ -28,20 +28,23 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
         title: const Text(
           '大喜利 メーカー',
           style: TextStyle(
-            fontSize: 25,
+            fontSize: 30,
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
         ),
-        leading: IconButton(
-          onPressed: () {
-            Navigator.of(context).pop();
-          },
-          icon: const Icon(
-            Icons.arrow_back_ios,
-            size: 40,
-            color: Colors.black,
-          ),
+        leading: Row(
+          children: [
+            const Spacer(),
+            GestureDetector(
+              onTap: Navigator.of(context).pop,
+              child: const Icon(
+                Icons.arrow_back_ios,
+                size: 40,
+                color: Colors.black,
+              ),
+            ),
+          ],
         ),
       ),
       body: Column(
@@ -49,7 +52,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
           const SizedBox(height: 20),
           target != null ? Image(image: target!) : Image.asset(assets),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40,vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
             child: SizedBox(
               width: 400,
               height: 100,
