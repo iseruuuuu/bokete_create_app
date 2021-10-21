@@ -22,14 +22,29 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.yellow,
         title: const Text(
           '大喜利 メーカー',
-          style: TextStyle(color: Colors.lightBlue),
+          style: TextStyle(
+            fontSize: 25,
+            color: Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            size: 40,
+            color: Colors.black,
+          ),
         ),
       ),
       body: Column(
         children: <Widget>[
+          const SizedBox(height: 20),
           target != null ? Image(image: target!) : Image.asset(assets),
           const Spacer(),
           Padding(
