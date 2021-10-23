@@ -25,19 +25,42 @@ class TitleScreen extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            TextButton(
-              onPressed: controller.onTap1,
-              child: const Text(
-                '1行で作成',
-                style: TextStyle(
-                  fontSize: 30,
-                  color: Colors.black,
-                  fontWeight: FontWeight.bold,
+            GestureDetector(
+              onTap: controller.onTap1,
+              child: Container(
+                width: double.infinity,
+                height: MediaQuery.of(context).size.height / 3.5,
+                color: Colors.yellow,
+                child: const Center(
+                  child: Text(
+                    '1行で作成',
+                    style: TextStyle(
+                      fontSize: 30,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
                 ),
               ),
             ),
-            TextButton(
-              onPressed: controller.onTap2,
+
+            // ElevatedButton(
+            //   onPressed: controller.onTap1,
+            //   style: ButtonStyle(
+            //     textStyle: Colors.yellow,
+            //   ),
+            //   child: const Text(
+            //     '1行で作成',
+            //     style: TextStyle(
+            //       fontSize: 30,
+            //       color: Colors.black,
+            //       fontWeight: FontWeight.bold,
+            //     ),
+            //   ),
+            // ),
+
+            GestureDetector(
+              onTap: controller.onTap2,
               child: const Text(
                 '2行で作成',
                 style: TextStyle(
@@ -47,8 +70,8 @@ class TitleScreen extends StatelessWidget {
                 ),
               ),
             ),
-            TextButton(
-              onPressed: controller.onTap3,
+            GestureDetector(
+              onTap: controller.onTap3,
               child: const Text(
                 '3行で作成',
                 style: TextStyle(
