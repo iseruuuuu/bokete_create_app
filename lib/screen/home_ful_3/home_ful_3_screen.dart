@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:image_editor/image_editor.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
-class HomeFulScreen extends StatefulWidget {
-  const HomeFulScreen({Key? key}) : super(key: key);
+class HomeFulScreen3 extends StatefulWidget {
+  const HomeFulScreen3({Key? key}) : super(key: key);
 
   @override
-  _HomeFulScreenState createState() => _HomeFulScreenState();
+  _HomeFulScreenState3 createState() => _HomeFulScreenState3();
 }
 
-class _HomeFulScreenState extends State<HomeFulScreen> {
+class _HomeFulScreenState3 extends State<HomeFulScreen3> {
   final TextEditingController _controller = TextEditingController(text: '');
   ImageProvider? target;
   String fontName = '';

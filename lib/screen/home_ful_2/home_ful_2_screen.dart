@@ -5,14 +5,14 @@ import 'package:flutter/services.dart';
 import 'package:image_editor/image_editor.dart';
 import 'package:image_gallery_saver/image_gallery_saver.dart';
 
-class HomeFulScreen extends StatefulWidget {
-  const HomeFulScreen({Key? key}) : super(key: key);
+class HomeFulScreen2 extends StatefulWidget {
+  const HomeFulScreen2({Key? key}) : super(key: key);
 
   @override
-  _HomeFulScreenState createState() => _HomeFulScreenState();
+  _HomeFulScreenState2 createState() => _HomeFulScreenState2();
 }
 
-class _HomeFulScreenState extends State<HomeFulScreen> {
+class _HomeFulScreenState2 extends State<HomeFulScreen2> {
   final TextEditingController _controller = TextEditingController(text: '');
   ImageProvider? target;
   String fontName = '';
@@ -111,11 +111,13 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   }
 
   Future addText(String fontName) async {
+
     //TODO 文字の設定位置を考えたい。
 
     //TODO 日本語は大丈夫そう。
 
     //TODO 英語が絡んでくるとズレる。。。
+
 
     const int size = 60;
     final ImageEditorOption option = ImageEditorOption();
@@ -156,8 +158,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
     option.outputFormat = const OutputFormat.png();
     option.addOption(textOption);
     final Uint8List u = await getAssetImage();
-    final Uint8List? result =
-        await ImageEditor.editImage(image: u, imageEditorOption: option);
+    final Uint8List? result = await ImageEditor.editImage(image: u, imageEditorOption: option);
     if (result == null) {
       return;
     }
