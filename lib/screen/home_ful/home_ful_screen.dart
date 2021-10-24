@@ -87,17 +87,28 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             ),
           ),
           const Spacer(),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.of(context).pop();
-            },
-            child: const Text(
-              '戻る',
-              style: TextStyle(
-                color: Colors.yellow,
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 1.4,
+            height: 70,
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.yellow,
+                elevation: 10,
+              ),
+              child: const Text(
+                '戻る',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
+          const Spacer(),
         ],
       ),
     );
