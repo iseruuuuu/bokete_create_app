@@ -16,7 +16,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   final TextEditingController _controller = TextEditingController(text: '');
   ImageProvider? target;
   String fontName = '';
-  String assets = 'assets/images/odai.png';
+  String assets = 'assets/images/bokete.png';
   late Uint8List _uint8list;
 
   @override
