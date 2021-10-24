@@ -12,8 +12,12 @@ class $AssetsImagesGen {
 
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
+  AssetGenImage get bokete => const AssetGenImage('assets/images/bokete.png');
   SvgGenImage get image => const SvgGenImage('assets/images/image.svg');
   AssetGenImage get odai => const AssetGenImage('assets/images/odai.png');
+  AssetGenImage get title01 => const AssetGenImage('assets/images/title01.JPG');
+  AssetGenImage get title02 => const AssetGenImage('assets/images/title02.JPG');
+  AssetGenImage get title03 => const AssetGenImage('assets/images/title03.JPG');
   AssetGenImage get title1 => const AssetGenImage('assets/images/title1.JPG');
   AssetGenImage get title2 => const AssetGenImage('assets/images/title2.JPG');
   AssetGenImage get title3 => const AssetGenImage('assets/images/title3.JPG');
