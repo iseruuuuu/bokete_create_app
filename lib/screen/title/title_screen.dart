@@ -12,7 +12,7 @@ class TitleScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.yellow,
-        elevation: 2,
+        elevation: 13,
         title: const Text(
           '大喜利メーカー',
           style: TextStyle(
@@ -29,7 +29,8 @@ class TitleScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: controller.onTap1,
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, //ボタンの背景色
+                primary: Colors.white,
+                elevation: 10,
               ),
               child: Assets.images.title1.image(
                 width: double.infinity,
@@ -39,7 +40,8 @@ class TitleScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: controller.onTap1,
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, //ボタンの背景色
+                primary: Colors.white,
+                elevation: 10,
               ),
               child: Assets.images.title2.image(
                 width: double.infinity,
@@ -49,7 +51,8 @@ class TitleScreen extends StatelessWidget {
             ElevatedButton(
               onPressed: controller.onTap1,
               style: ElevatedButton.styleFrom(
-                primary: Colors.white, //ボタンの背景色
+                primary: Colors.white,
+                elevation: 10,
               ),
               child: Assets.images.title2.image(
                 width: double.infinity,
