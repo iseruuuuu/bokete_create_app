@@ -69,6 +69,8 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             child: ElevatedButton(
               onPressed: () {
                 onImageStore();
+                //TODO もし、画像が変化していなかったら、画像を保存しないようにする。
+                //TODO ボタンの位置を変更したい。
                 onTapStore();
               },
               style: ElevatedButton.styleFrom(
