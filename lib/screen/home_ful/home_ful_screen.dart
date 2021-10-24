@@ -1,5 +1,6 @@
 import 'dart:typed_data';
 import 'package:bokete_create_app/screen/store/store_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:image_editor/image_editor.dart';
@@ -50,34 +51,9 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
               ),
             ),
           ),
-          const Spacer(),
-
           //TODO ボタンのデザインを変えたい。
           GestureDetector(
-            onTap: () async {
-              await addText(fontName);
-            },
-            child: const Text(
-              '文字を反映する',
-              style: TextStyle(
-                fontSize: 20,
-                color: Colors.blue,
-              ),
-            ),
-          ),
-          const Spacer(),
-
-          //TODO ボタンのデザインを変えたい。
-          GestureDetector(
-            onTap: () async {
-              onImageStore();
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => const StoreScreen(),
-                ),
-              );
-            },
+            onTap: () async {},
             child: const Text(
               '画像を保存する',
               style: TextStyle(
@@ -89,10 +65,33 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
           const Spacer(),
           SizedBox(
             width: MediaQuery.of(context).size.width / 1.4,
-            height: 70,
+            height: 50,
             child: ElevatedButton(
               onPressed: () {
-                Navigator.of(context).pop();
+                onImageStore();
+                onTapStore();
+              },
+              style: ElevatedButton.styleFrom(
+                primary: Colors.blue,
+                elevation: 10,
+              ),
+              child: const Text(
+                '保存する',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+          const Spacer(),
+          SizedBox(
+            width: MediaQuery.of(context).size.width / 1.4,
+            height: 50,
+            child: ElevatedButton(
+              onPressed: () {
+                dialog();
               },
               style: ElevatedButton.styleFrom(
                 primary: Colors.yellow,
@@ -102,7 +101,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
                 '戻る',
                 style: TextStyle(
                   color: Colors.black,
-                  fontSize: 30,
+                  fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
               ),
@@ -176,6 +175,40 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   }
 
   void onImageStore() async {
-    final result = await ImageGallerySaver.saveImage(_uInt8list);
+    await ImageGallerySaver.saveImage(_uInt8list);
+  }
+
+  void onTapStore() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => const StoreScreen(),
+      ),
+    );
+  }
+
+  Future dialog() {
+    return showDialog(
+      context: context,
+      builder: (_) => CupertinoAlertDialog(
+        title: const Text("確認"),
+        content: const Text('保存'),
+        actions: [
+          CupertinoDialogAction(
+              child: const Text('Cancel'),
+              isDestructiveAction: true,
+              onPressed: () {
+                Navigator.of(context).pop();
+              }),
+          CupertinoDialogAction(
+            child: const Text('OK'),
+            onPressed: () {
+              //Navigator.of(context).pop();
+              Navigator.of(context).popUntil((route) => route.isFirst);
+            },
+          )
+        ],
+      ),
+    );
   }
 }
