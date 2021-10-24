@@ -23,36 +23,18 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        backgroundColor: Colors.yellow,
-        title: const Text(
-          '大喜利 メーカー(1行)',
-          style: TextStyle(
-            fontSize: 20,
-            color: Colors.black,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-        leading: Row(
-          children: [
-            const Spacer(),
-            GestureDetector(
-              onTap: Navigator.of(context).pop,
-              child: const Icon(
-                Icons.arrow_back_ios,
-                size: 40,
-                color: Colors.black,
-              ),
-            ),
-          ],
+      appBar: PreferredSize(
+        preferredSize: Size.zero,
+        child: AppBar(
+          backgroundColor: Colors.yellow,
+          elevation: 0,
         ),
       ),
       body: Column(
         children: [
-          const SizedBox(height: 20),
           target != null ? Image(image: target!) : Image.asset(assets),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
             child: SizedBox(
               width: 400,
               height: 100,
@@ -105,6 +87,17 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
             ),
           ),
           const Spacer(),
+          ElevatedButton(
+              onPressed: () {
+                Navigator.of(context).pop();
+              },
+              child: const Text(
+                  '戻る',
+                style: TextStyle(
+                  color: Colors.yellow,
+                ),
+              ),
+          )
         ],
       ),
     );
