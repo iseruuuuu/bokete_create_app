@@ -3,14 +3,9 @@
 ///  FlutterGen
 /// *****************************************************
 
-// ignore_for_file: directives_ordering
-
-// Flutter imports:
-import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
-// Package imports:
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
@@ -18,6 +13,10 @@ class $AssetsImagesGen {
   AssetGenImage get background =>
       const AssetGenImage('assets/images/background.png');
   SvgGenImage get image => const SvgGenImage('assets/images/image.svg');
+  AssetGenImage get odai => const AssetGenImage('assets/images/odai.png');
+  AssetGenImage get title1 => const AssetGenImage('assets/images/title1.JPG');
+  AssetGenImage get title2 => const AssetGenImage('assets/images/title2.JPG');
+  AssetGenImage get title3 => const AssetGenImage('assets/images/title3.JPG');
 }
 
 class Assets {
