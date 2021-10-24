@@ -33,8 +33,7 @@ class TitleScreen extends StatelessWidget {
                 elevation: 10,
               ),
               child: Assets.images.title1.image(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 3.5,
+                height: MediaQuery.of(context).size.height / 4,
               ),
             ),
             ElevatedButton(
@@ -44,8 +43,7 @@ class TitleScreen extends StatelessWidget {
                 elevation: 10,
               ),
               child: Assets.images.title2.image(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 3.5,
+                height: MediaQuery.of(context).size.height / 4,
               ),
             ),
             ElevatedButton(
@@ -55,8 +53,7 @@ class TitleScreen extends StatelessWidget {
                 elevation: 10,
               ),
               child: Assets.images.title2.image(
-                width: double.infinity,
-                height: MediaQuery.of(context).size.height / 3.5,
+                height: MediaQuery.of(context).size.height / 4,
               ),
             ),
           ],
