@@ -26,9 +26,9 @@ class _HomeFulScreenState2 extends State<HomeFulScreen2> {
       appBar: AppBar(
         backgroundColor: Colors.yellow,
         title: const Text(
-          '大喜利 メーカー',
+          '大喜利 メーカー(2行)',
           style: TextStyle(
-            fontSize: 30,
+            fontSize: 20,
             color: Colors.black,
             fontWeight: FontWeight.bold,
           ),
