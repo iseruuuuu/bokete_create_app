@@ -37,7 +37,7 @@ class TitleScreen extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: controller.onTap1,
+              onPressed: controller.onTap2,
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 elevation: 10,
@@ -47,7 +47,7 @@ class TitleScreen extends StatelessWidget {
               ),
             ),
             ElevatedButton(
-              onPressed: controller.onTap1,
+              onPressed: controller.onTap3,
               style: ElevatedButton.styleFrom(
                 primary: Colors.white,
                 elevation: 10,
