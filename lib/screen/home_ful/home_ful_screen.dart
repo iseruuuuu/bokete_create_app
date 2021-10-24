@@ -17,7 +17,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   ImageProvider? target;
   String fontName = '';
   String assets = 'assets/images/bokete.png';
-  late Uint8List _uint8list;
+  late Uint8List _uInt8list;
 
   @override
   Widget build(BuildContext context) {
@@ -166,7 +166,7 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
       return;
     }
     target = MemoryImage(result);
-    _uint8list = result;
+    _uInt8list = result;
     setState(() {});
   }
 
@@ -176,6 +176,6 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
   }
 
   void onImageStore() async {
-    final result = await ImageGallerySaver.saveImage(_uint8list);
+    final result = await ImageGallerySaver.saveImage(_uInt8list);
   }
 }
