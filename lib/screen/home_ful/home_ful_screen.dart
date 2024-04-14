@@ -34,28 +34,40 @@ class _HomeFulScreenState extends State<HomeFulScreen> {
       body: Column(
         children: [
           target != null ? Image(image: target!) : Image.asset(assets),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 30),
-            child: SizedBox(
-              width: 400,
-              height: 100,
-              child: TextField(
-                maxLines: 1,
-                maxLength: 10,
-                textAlign: TextAlign.center,
-                controller: _controller,
-                keyboardType: TextInputType.multiline,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+
+          Row(
+            children: [
+              SizedBox(
+                width: 250,
+                height: 100,
+                child: TextField(
+                  maxLines: 1,
+                  maxLength: 10,
+                  textAlign: TextAlign.center,
+                  controller: _controller,
+                  keyboardType: TextInputType.multiline,
+                  decoration: const InputDecoration(
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
-            ),
+             GestureDetector(
+                 child: Text('+',
+                 style: TextStyle(
+                   fontSize: 20,
+                   color: Colors.red,
+                 ),
+                 ),
+             )
+            ],
           ),
           //TODO ボタンのデザインを変えたい。
           GestureDetector(
-            onTap: () async {},
+            onTap: () {
+              addText(fontName);
+            },
             child: const Text(
-              '画像を保存する',
+              '反映する',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.blue,
